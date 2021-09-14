@@ -7,23 +7,41 @@
 // Lexical Scoping / Scope Chaining - where the function is present
 // nested fn scope -> outer fn Scope -> global scope
 // Closure is the processs of binding the outer scope variable with nested functions
+// IIFE - Immediately Invoked Function Expression
+    // - restricts the scope of variable
+    // - avoids global pollution
+    // - self-invoked
 
-function buildTicket(transport){
-    var numOofPass = 0;
-    return function(name){
-        return "Hello " + name + "\nYou are going via " + transport +
-            "\nYour Ticket Id #" + (++numOofPass)
-    }
-}
+(function(){
+    console.log("IIFE Called")    
+})();
+
+
+
+
+
+
+
+
+
+
+
+// function buildTicket(transport){
+//     var numOofPass = 0;
+//     return function(name){
+//         return "Hello " + name + "\nYou are going via " + transport +
+//             "\nYour Ticket Id #" + (++numOofPass)
+//     }
+// }
 
 // console.log(buildTicket("Ship"));       // nested func
 
-var ship = buildTicket("Ship")
-console.log(ship("Foo"))        // ?
-console.log(ship("Bar"))        // ?
+// var ship = buildTicket("Ship")
+// console.log(ship("Foo"))        // ?
+// console.log(ship("Bar"))        // ?
 
-var car = buildTicket("Car")
-console.log(car("Baz"))     // ?
+// var car = buildTicket("Car")
+// console.log(car("Baz"))     // ?
 
 
 
