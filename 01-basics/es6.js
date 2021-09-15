@@ -260,7 +260,8 @@
     // - Import the module functionality
         // - require()
 
-        const { mul, add } = require("./abc")
+        const { number } = require("yargs")
+const { mul, add } = require("./abc")
 
         console.log(mul(2,4))
         console.log(add(2,4))
@@ -285,3 +286,20 @@
 
 
 // - Map / Set
+
+
+
+
+
+
+
+// const numbers = [1,2,3,4,5]
+
+// const num = numbers.find((value) => {
+//     console.log(value);
+//     return value === 3;
+// })
+
+// console.log(num)
+
+// findIndex, map, forEach, some, filter, every etc
