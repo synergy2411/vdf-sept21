@@ -18,9 +18,16 @@ const saveNotes = (notes) => {
 
 const addNote = (title, body) => {
     const notes = loadNotes()
-    notes.push({title, body})
-    saveNotes(notes)
+    const foundNote = notes.find(note => note.title === title)
+    if(foundNote){
+        console.log(chalk.red("Note already exist. Try again!"))
+    }else{
+        notes.push({title, body, createdAt : new Date()})
+        saveNotes(notes)
+    }
 }
+
+// readNote
 
 module.exports = {
     addNote
