@@ -69,3 +69,8 @@ latest
 - Streams
 - Express
 - Mongo
+
+
+- npm install nodemon -g
+
+- npm install express

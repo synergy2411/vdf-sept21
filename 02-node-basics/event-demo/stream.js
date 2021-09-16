@@ -18,6 +18,7 @@ readStream.pipe(writeStream)
 
 readStream.on("data", (chunk) => {
     console.log(chunk.toString());
+    writeStream.write(chunk)
     readStream.on("end", () => {
         console.log("Finish reading");
     })
