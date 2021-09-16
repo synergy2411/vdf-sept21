@@ -97,3 +97,16 @@ https://api.darksky.net/forecast/473fe696d21e65026547b2d50b56014c/37.8267,-122.4
 - db.users.find()
 
 # Download Compass / Robo 3T (GUI for Mongo)
+
+
+- npm install mongodb
+
+
+# Mongo Atlas Cloud
+
+- Create Cluster (Free Available)
+- Create Database User (vdf, YaSxUSZKBgiZSttl)
+- Network Access
+
+# Mongo SRV
+mongodb+srv://vdf:YaSxUSZKBgiZSttl@cluster0.e9xsq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
