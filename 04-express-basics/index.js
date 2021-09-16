@@ -1,3 +1,4 @@
+const { response } = require("express");
 const express = require("express");
 const app = express();
 
@@ -9,6 +10,17 @@ const todoCollection = [
   { id: 3, label: "to renew car insurance", status: true },
   { id: 4, label: "to pot the plants", status: true },
 ];
+
+app.get("/show-form", (req, res) => {
+    res.sendFile(__dirname+"/public/index.html")
+})
+
+app.get("/add-new", (req, res) => {
+    const { label } = req.query;
+    const item = { label, id : todoCollection.length +1, status : false};
+    todoCollection.push(item);
+    res.redirect("/api/todos")
+})
 
 app.post("/api/todos", (req, res) => {
   if (req.body) {

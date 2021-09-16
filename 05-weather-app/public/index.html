@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-md-6 offset-sm-2 offset-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="text-center">My Awesome Weather App</h4>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-8">
+                                    <input type="text" 
+                                        class="form-control" 
+                                        name="txtAddress" 
+                                        id="txtAddress"
+                                        placeholder="Pls enter your location">
+                                </div>
+                                <div class="col-4">
+                                    <button type="button" id="btnWeather" class="btn btn-primary">
+                                        Show Weather
+                                    </button>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div id="message"></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const btn = document.getElementById("btnWeather")
+        btn.addEventListener("click", (event) => {
+            event.preventDefault();
+            const txtAddress = document.getElementById("txtAddress").value;
+            const div = document.getElementById("message")
+            fetch(`http://localhost:9090/show-weather?address=${txtAddress}`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log("Server Response - ", data)
+                    
+                    div.innerHTML = `
+                    <h4>The temperature at ${data.placeName} is ${data.temperature}.</h4>
+                    <p>It is anticipated ${data.summary}! </p>
+                    `
+                })
+                .catch(err => {
+                    console.log(err);
+                    div.innerHTML = err
+                })
+        })
+
+
+    </script>
+    
+</body>
+</html>
