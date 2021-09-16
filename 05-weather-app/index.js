@@ -11,11 +11,9 @@ app.get("/show-weather", (req, res) => {
     const {address} = req.query;
     if(address){
         getGeocode(address)
-            .then(response => {
-                const {latitude, longitude, placeName} = response;
+            .then(({latitude, longitude, placeName}) => {
                 getForecast(latitude, longitude)
-                    .then(result =>{ 
-                        const {temperature, summary} = result;
+                    .then(( {temperature, summary}) =>{
                         return res.send({placeName, summary, temperature});
                     })
                     .catch(err => {

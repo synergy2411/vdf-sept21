@@ -54,8 +54,6 @@
             fetch(`http://localhost:9090/show-weather?address=${txtAddress}`)
                 .then(response => response.json())
                 .then(data => {
-                    console.log("Server Response - ", data)
-                    
                     div.innerHTML = `
                     <h4>The temperature at ${data.placeName} is ${data.temperature}.</h4>
                     <p>It is anticipated ${data.summary}! </p>
