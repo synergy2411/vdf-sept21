@@ -74,3 +74,8 @@ latest
 - npm install nodemon -g
 
 - npm install express
+
+# Express API
+- Route Paramter : request.params
+- Query Paramter : request.query
+- Request Body : request.body (POST + express.json())
