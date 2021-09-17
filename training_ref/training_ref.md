@@ -154,3 +154,6 @@ mongodb+srv://vdf:YaSxUSZKBgiZSttl@cluster0.e9xsq.mongodb.net/myFirstDatabase?re
 - git push heroku main
 
 # Deployed URI : https://sk-vdf-todo-app.herokuapp.com/todos
+
+# json web token
+- npm install jsonwebtoken
