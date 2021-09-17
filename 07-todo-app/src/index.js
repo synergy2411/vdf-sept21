@@ -4,10 +4,16 @@ const todoRouter = require("./router/todo.routes");
 
 const app = express();
 
+const PORT = process.env.PORT || 9090
+
 app.use(express.json());
 
 app.use("/todos", todoRouter)
 
-app.listen(9090, () => {
-    console.log("Express Server started at PORT : 9090")
+app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/public/index.html")
+})
+
+app.listen(PORT, () => {
+    console.log("Express Server started at PORT : " + PORT)
 })

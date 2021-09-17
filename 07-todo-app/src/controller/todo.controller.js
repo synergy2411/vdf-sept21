@@ -1,4 +1,3 @@
-const { response } = require("express");
 const TodoModel = require("../model/todo");
 
 const getAllTodos = async (req, res) => {
