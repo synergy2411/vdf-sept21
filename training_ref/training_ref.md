@@ -162,3 +162,7 @@ mongodb+srv://vdf:YaSxUSZKBgiZSttl@cluster0.e9xsq.mongodb.net/myFirstDatabase?re
 # View / Template Engines 
 - Reusability
 - Dynamic Contents
+
+# Mocha | Chai
+- npm install mocha -g
+- npm install chai chai-http --save-dev

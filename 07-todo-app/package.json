@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "test" : "mocha --watch"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +14,9 @@
   "dependencies": {
     "express": "^4.17.1",
     "mongoose": "^6.0.6"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0"
   }
 }

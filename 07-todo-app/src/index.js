@@ -14,6 +14,5 @@ app.get("/", (req, res) => {
     res.sendFile(__dirname + "/public/index.html")
 })
 
-app.listen(PORT, () => {
-    console.log("Express Server started at PORT : " + PORT)
-})
+
+module.exports = app;
