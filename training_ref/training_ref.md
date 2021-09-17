@@ -157,3 +157,8 @@ mongodb+srv://vdf:YaSxUSZKBgiZSttl@cluster0.e9xsq.mongodb.net/myFirstDatabase?re
 
 # json web token
 - npm install jsonwebtoken
+- npm install dotenv
+
+# View / Template Engines 
+- Reusability
+- Dynamic Contents

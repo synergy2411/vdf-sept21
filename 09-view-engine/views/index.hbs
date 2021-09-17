@@ -1,0 +1,27 @@
+{{>header}}
+
+<div class="row">
+  {{#each posts}}
+    <div class="col-sm-4 col-md-4">
+      <div class="card">
+        <div class="card-header">
+          <h3>Author Name : {{showNameInUpperCase this.author}}</h3>
+        </div>
+        <img src="{{this.image}}" style="width: auto; height: 200px;">
+        <div class="card-body">
+          {{#if this.comments}}
+            {{#each this.comments}}
+              <ul class="list-group">
+                <li class="list-group-item">
+                  {{this}}
+                </li>
+              </ul>
+            {{/each}}
+          {{else}}
+            <h3>Be the first to comment</h3>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
