@@ -2,10 +2,12 @@ const express = require("express");
 const app = express();
 const jwt = require("jsonwebtoken");
 const { ensureToken, verifyToken } = require("./middleware/auth.middleware")
+require("dotenv").config();
+const { PORT } = require("../environment");
 
-const PORT = process.env.PORT || 9090;
+const { SECRET_KEY } = process.env;
 
-const privateKey = "MY_SUPER_SECRET_KET";
+// const PORT = process.env.PORT || 9090;
 
 app.use(express.json());
 
@@ -14,7 +16,7 @@ app.post("/api/login", (req, res) => {
   const { username, password } = req.body;
   if (username && password) {
     // Connect to your DB & verify the user
-    const token = jwt.sign({ id: 123 }, privateKey);
+    const token = jwt.sign({ id: 123 }, SECRET_KEY);
     return res.send({ token });
   } else {
     return res.send({ message: "Credentials needed!" });
