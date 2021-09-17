@@ -128,3 +128,29 @@ mongodb+srv://vdf:YaSxUSZKBgiZSttl@cluster0.e9xsq.mongodb.net/myFirstDatabase?re
 
 - nodemon src/index.js
 - npm run dev|start
+
+
+# Mongoose 
+- Schema based model
+- Validation : built-in & Custom
+- Hooks : pre & post
+
+
+# Heroku Cloud - Deployment
+- Sign up and login on Heroku
+- Download heroku cli from heroku devcenter
+- Restart IDE
+- Github Account login
+- Create Git repo and commit project code
+
+- heroku -v
+- heroku login
+- Optional - Generate SSH key from Powershell - > ssh-keygen
+- heroku keys:add
+- heroku create <Application_Name>
+// commit all code to git
+// push all code to git
+- git remote		// checks the git servers
+- git push heroku main
+
+# Deployed URI : https://sk-vdf-todo-app.herokuapp.com/todos
