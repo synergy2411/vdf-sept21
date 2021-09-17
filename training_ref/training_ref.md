@@ -120,3 +120,8 @@ mongodb+srv://vdf:YaSxUSZKBgiZSttl@cluster0.e9xsq.mongodb.net/myFirstDatabase?re
 - GET : /todos/{id} - single todo item
 - PATCH : /todos/{id} - update the single item
 - DELETE : /todos/{id} - delete single item
+
+
+
+- nodemon src/index.js
+- npm run dev|start
