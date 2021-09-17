@@ -118,8 +118,11 @@ mongodb+srv://vdf:YaSxUSZKBgiZSttl@cluster0.e9xsq.mongodb.net/myFirstDatabase?re
 - GET : /todos - all todo items
 - POST : /todos - create single todo item
 - GET : /todos/{id} - single todo item
-- PATCH : /todos/{id} - update the single item
 - DELETE : /todos/{id} - delete single item
+- PATCH : /todos/{id} - update the single item
+    : req.body - updated data
+    : {id} - route parameter
+    : findByIdAndUpdate(id, req.body)
 
 
 

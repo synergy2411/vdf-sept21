@@ -1,3 +1,4 @@
+const { response } = require("express");
 const TodoModel = require("../model/todo");
 
 const getAllTodos = async (req, res) => {
@@ -25,7 +26,42 @@ const createTodo = async (req, res) => {
   }
 };
 
+const getSingleTodo = async (req, res) => {
+    const { id } = req.params;
+    try{
+        const todo = await TodoModel.findById(id)
+        return res.send({...todo._doc})
+    }catch(err){
+        console.log(err);
+        return res.send(err)
+    }
+}
+
+const deleteTodo = async (req, res) => {
+    const { id } = req.params;
+    try{
+        const deletedTodo = await TodoModel.findByIdAndDelete(id);
+        return res.send({...deletedTodo._doc})
+    }catch(err){
+        console.log(err)
+        return res.send(err)
+    }
+}
+
+const updateTodo = async (req, res) => {
+    const { id } = req.params;
+    if(req.body){
+        const updatedTodo = await TodoModel.findByIdAndUpdate(id, req.body)
+        return res.send({...updatedTodo._doc})
+    }else{
+        return res.send({message : "Body not found"})
+    }
+}
+
 module.exports = {
   getAllTodos,
   createTodo,
+  getSingleTodo,
+  deleteTodo,
+  updateTodo
 };
