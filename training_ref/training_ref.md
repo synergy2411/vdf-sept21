@@ -110,3 +110,13 @@ https://api.darksky.net/forecast/473fe696d21e65026547b2d50b56014c/37.8267,-122.4
 
 # Mongo SRV
 mongodb+srv://vdf:YaSxUSZKBgiZSttl@cluster0.e9xsq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+
+# Mongoose - ORM for Mongodb
+- npm install mongoose 
+
+# Todo App
+- GET : /todos - all todo items
+- POST : /todos - create single todo item
+- GET : /todos/{id} - single todo item
+- PATCH : /todos/{id} - update the single item
+- DELETE : /todos/{id} - delete single item
